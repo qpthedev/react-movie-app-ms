@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Helmet from "react-helmet";
 import styled from "styled-components";
 import Loader from "Components/Loader";
 
@@ -22,7 +23,7 @@ const Backdrop = styled.div`
   background-position: center center;
   background-size: cover;
   filter: blur(1px);
-  opacity: 0.5;
+  opacity: 0.4;
   z-index: 0;
 `;
 
@@ -40,7 +41,7 @@ const Cover = styled.div`
   background-image: url(${(props) => props.bgImage});
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   border-radius: 3px;
 `;
 
@@ -79,9 +80,20 @@ const Overview = styled.p`
 
 const DetailPresenter = ({ result, loading, error }) =>
   loading ? (
-    <Loader></Loader>
+    <>
+      <Helmet>
+        <title>Loading... | QFlix</title>
+      </Helmet>
+      <Loader></Loader>
+    </>
   ) : (
     <Container>
+      <Helmet>
+        <title>
+          {result.original_title ? result.original_title : result.original_name}{" "}
+          | QFlix
+        </title>
+      </Helmet>
       <Backdrop bgImage={`${imageBaseUrl}${result.backdrop_path}`}></Backdrop>
 
       <Content>
