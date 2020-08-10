@@ -59,8 +59,8 @@ export default function useShow() {
                 Trailer #{index + 1}: <br />
               </Container>
               <iframe
-                width="100%"
-                height="310"
+                width="550"
+                height="300"
                 src={`${embedBaseUrl}${video.key}`}
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
               ></iframe>
