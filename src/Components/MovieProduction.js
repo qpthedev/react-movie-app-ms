@@ -56,9 +56,6 @@ export default function useMovieProd() {
     updateMovieProd();
   }, []);
 
-  console.log(companies);
-  console.log(countries);
-
   return loading ? (
     <Loader />
   ) : (
