@@ -19,3 +19,6 @@ Learning React and ES6 by making a Movie Discovery App
 - [x] TV Show Detail
 - [x] Movie Detail
 - [x] Search (Movie, TV)
+
+## Preview
+https://qpflix.netlify.app
